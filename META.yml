@@ -1,0 +1,25 @@
+---
+name: Test-NoPlan
+version: 0.0.1
+author:
+  - 'Duncan Ferguson <duncan_j_ferguson@yahoo.co.uk>'
+abstract: check perl test files for 'no_plan'
+license: perl
+resources:
+  license: ~
+build_requires:
+  Devel::Cover: 0.42
+  Test::More: 0
+  Test::Perl::Critic: 0
+  Test::PerlTidy: 0
+  Test::Pod: 0
+  Test::Pod::Coverage: 0
+  version: 0
+provides:
+  Test::NoPlan:
+    file: lib/Test/NoPlan.pm
+    version: 0.0.1
+generated_by: Module::Build version 0.32
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
