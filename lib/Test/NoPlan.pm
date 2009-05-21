@@ -3,7 +3,7 @@ package Test::NoPlan;
 use warnings;
 use strict;
 
-use version; our $VERSION = version->new('0.0.1');
+use version; our $VERSION = version->new('0.0.2');
 
 use base 'Exporter';
 use Test::Builder::Module;
@@ -13,9 +13,8 @@ use Cwd;
 use File::Spec;
 use Carp;
 
-#our @EXPORT    = qw( all_plans_ok );
-#our @EXPORT_OK = qw( get_file_list check_file_for_no_plan );
-our @EXPORT_OK = qw( all_plans_ok get_file_list check_file_for_no_plan );
+our @EXPORT = qw( all_plans_ok );  ## no critic (ProhibitAutomaticExportation)
+our @EXPORT_OK = qw( get_file_list check_file_for_no_plan );
 
 {
     my $CLASS = __PACKAGE__;
@@ -44,10 +43,8 @@ our @EXPORT_OK = qw( all_plans_ok get_file_list check_file_for_no_plan );
         $test->plan( tests => scalar @files );
 
         foreach my $file (@files) {
-            $test->ok(
-                check_file_for_no_plan($file),
-                "'$file' does not have 'no_plan' set"
-            );
+            $test->ok( check_file_for_no_plan($file),
+                "'$file' has 'no_plan' set" );
         }
 
         return 1;
@@ -269,8 +266,6 @@ L<http://search.cpan.org/dist/Test-NoPlan/>
 =item * Source code repository at GitHub
 
 L<http://github.com/duncs/perl-test-noplan>
-
-L<git://github.com/duncs/perl-test-noplan.git>
 
 =back
 

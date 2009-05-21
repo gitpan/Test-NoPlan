@@ -5,12 +5,7 @@ WriteMakefile
           'NAME' => 'Test::NoPlan',
           'VERSION_FROM' => 'lib/Test/NoPlan.pm',
           'PREREQ_PM' => {
-                           'Devel::Cover' => '0.42',
                            'Test::More' => 0,
-                           'Test::Perl::Critic' => '0',
-                           'Test::PerlTidy' => '0',
-                           'Test::Pod' => '0',
-                           'Test::Pod::Coverage' => '0',
                            'version' => 0
                          },
           'INSTALLDIRS' => 'site',

@@ -8,15 +8,10 @@ my $builder = Module::Build->new(
     dist_author       => 'Duncan Ferguson <duncan_j_ferguson@yahoo.co.uk>',
     dist_version_from => 'lib/Test/NoPlan.pm',
     build_requires    => {
-        'version'             => 0,
-        'Test::More'          => 0,
-        'Test::Perl::Critic'  => '0',
-        'Test::PerlTidy'      => '0',
-        'Test::Pod'           => '0',
-        'Test::Pod::Coverage' => '0',
-        'Devel::Cover'        => '0.42',
+        'version'    => 0,
+        'Test::More' => 0,
     },
-    add_to_cleanup     => ['Test-NoPlan-*'],
+    add_to_cleanup     => [ 'Test-NoPlan-*', 'Debian_CPANTS.txt', ],
     create_makefile_pl => 'traditional',
 );
 
